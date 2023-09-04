@@ -114,8 +114,7 @@ void print_data(unsigned char *e_ident)
 /**
  *  * print_version - Prints the version of an ELF header.
  *   * @e_ident: A pointer to an array containing the ELF version.
-
-    */
+ *    */
 void print_version(unsigned char *e_ident)
 {
 	 printf(" Version: %d",
@@ -212,8 +211,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 		break;
 	case ET_DYN:
 		printf("DYN (Shared object file)\n");
-	i	break;
-
+		break;
 	case ET_CORE:
 		printf("CORE (Core file)\n");
 		break;
@@ -251,7 +249,7 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
  *
  * Description: If the file cannot be closed - exit code 98.
  */
-void close_elf(int elf)i
+void close_elf(int elf)
 {
 	if (close(elf) == -1)
 	{
@@ -314,3 +312,4 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	close_elf(o);
 	return (0);
 }
+
